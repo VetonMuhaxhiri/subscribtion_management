@@ -26,6 +26,7 @@ I lack the time to add a proper API Documentation for .e.x Swagger documentation
 [Postman collection file](Subscription%20Management%20System.postman_collection.json)
 
 ## TODO
+- Exception handling
 - Swagger documentation
 - PHP Unit test
 - Code style checkers
