@@ -1,0 +1,340 @@
+{
+	"info": {
+		"_postman_id": "016c8e6a-f57d-48da-9f3e-36bab1689d98",
+		"name": "Subscription Management System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22113532",
+		"_collection_link": "https://universal-space-692166.postman.co/workspace/Delasport~c938fcec-bf76-4801-8ec3-b33c053dab00/collection/22113532-016c8e6a-f57d-48da-9f3e-36bab1689d98?action=share&source=collection_link&creator=22113532"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"veton123@gmail.com\",\n    \"password\": \"password\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/login_check",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login_check"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n    \"email\": \"vetonm6@gmail.com\",\n    \"password\": \"password\",\n    \"name\": \"veton\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all subscriptions",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MDg4ODIwMjksImV4cCI6MTcwODg4NTYyOSwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoidmV0b25tNkBnbWFpbC5jb20ifQ.PfM3N_R1n_OCKRXQ0gzAatOg2BpG825b1VCRkZtwz0luU9QgpsU4TNAaRQX9iUPJJ6DdLDw7AScupQvp4qOykeZBv1qcIyMyqu1VV0ra6YVWh0T3g6eohjFhjrfiWfnGA4go5Mck4fYGFj76eKxse3BDm-HMAesjIuZJM4WKqrszOThEE4EbZGgCK6VZA7vu4qfqaj_w5aWJsmbFU7BKX0bC88cDmeQcujxJ093xO4HdpI4nMQ2lsyhnbw4bJZBmfemcdgnckTkI6g9cKVCmsFtEHGm4BlepCB767mHFBp2VN7n-XrAAckvgVVpc7SCYIxz7X8_ixd1ie2emhpbbJA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n    \"email\": \"vetonm6@gmail.com\",\n    \"password\": \"password\",\n    \"name\": \"veton\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/subscriptions?page=1&perPage=10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"subscriptions"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "perPage",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get one subscription by id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MDg4NzgyNjIsImV4cCI6MTcwODg4MTg2Miwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoidmV0b25tNkBnbWFpbC5jb20ifQ.BNqFIXH-gvdIUtf2F0QywtFpIib2RFkIBotkgA9153obVBKBdPpWj5mJ5DjP3n_Sb_CV7hMG1ZNSR45blreM2K06F9_QaooCDp6lVGISx76oYXARu8k__u_qqNik53zc3TiYieY19vu2d87bh_2bIiSPQ6LIHhLlOC9XQ8W8Xd56US1CHu6gX9EzjGFJUJZMyFVX3bSogJRiNZj_cp8OhXZV-qHXAhxv6-bMNFuPK2MUgG-qnN_yEAfEBInflkSASGVaL7rh9IEDJk6Xi48ZgBmAB38DVVZ2B2BIk5ef_--tmXWPhDSTHVw89TUPBlGyaAQnsWFisWX2H1ht3NYCtw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n    \"email\": \"vetonm6@gmail.com\",\n    \"password\": \"password\",\n    \"name\": \"veton\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/subscriptions/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"subscriptions",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Subscribe",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MDg4NzgyNjIsImV4cCI6MTcwODg4MTg2Miwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoidmV0b25tNkBnbWFpbC5jb20ifQ.BNqFIXH-gvdIUtf2F0QywtFpIib2RFkIBotkgA9153obVBKBdPpWj5mJ5DjP3n_Sb_CV7hMG1ZNSR45blreM2K06F9_QaooCDp6lVGISx76oYXARu8k__u_qqNik53zc3TiYieY19vu2d87bh_2bIiSPQ6LIHhLlOC9XQ8W8Xd56US1CHu6gX9EzjGFJUJZMyFVX3bSogJRiNZj_cp8OhXZV-qHXAhxv6-bMNFuPK2MUgG-qnN_yEAfEBInflkSASGVaL7rh9IEDJk6Xi48ZgBmAB38DVVZ2B2BIk5ef_--tmXWPhDSTHVw89TUPBlGyaAQnsWFisWX2H1ht3NYCtw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/subscriptions/5/subscribe",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"subscriptions",
+						"5",
+						"subscribe"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Unsubscribe",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MDg4NzgyNjIsImV4cCI6MTcwODg4MTg2Miwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoidmV0b25tNkBnbWFpbC5jb20ifQ.BNqFIXH-gvdIUtf2F0QywtFpIib2RFkIBotkgA9153obVBKBdPpWj5mJ5DjP3n_Sb_CV7hMG1ZNSR45blreM2K06F9_QaooCDp6lVGISx76oYXARu8k__u_qqNik53zc3TiYieY19vu2d87bh_2bIiSPQ6LIHhLlOC9XQ8W8Xd56US1CHu6gX9EzjGFJUJZMyFVX3bSogJRiNZj_cp8OhXZV-qHXAhxv6-bMNFuPK2MUgG-qnN_yEAfEBInflkSASGVaL7rh9IEDJk6Xi48ZgBmAB38DVVZ2B2BIk5ef_--tmXWPhDSTHVw89TUPBlGyaAQnsWFisWX2H1ht3NYCtw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/subscriptions/5/unsubscribe",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"subscriptions",
+						"5",
+						"unsubscribe"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get my subscriptions",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MDg4NzgyNjIsImV4cCI6MTcwODg4MTg2Miwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoidmV0b25tNkBnbWFpbC5jb20ifQ.BNqFIXH-gvdIUtf2F0QywtFpIib2RFkIBotkgA9153obVBKBdPpWj5mJ5DjP3n_Sb_CV7hMG1ZNSR45blreM2K06F9_QaooCDp6lVGISx76oYXARu8k__u_qqNik53zc3TiYieY19vu2d87bh_2bIiSPQ6LIHhLlOC9XQ8W8Xd56US1CHu6gX9EzjGFJUJZMyFVX3bSogJRiNZj_cp8OhXZV-qHXAhxv6-bMNFuPK2MUgG-qnN_yEAfEBInflkSASGVaL7rh9IEDJk6Xi48ZgBmAB38DVVZ2B2BIk5ef_--tmXWPhDSTHVw89TUPBlGyaAQnsWFisWX2H1ht3NYCtw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/subscriptions/me",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"subscriptions",
+						"me"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
