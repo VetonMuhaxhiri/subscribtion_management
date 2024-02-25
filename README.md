@@ -23,6 +23,7 @@ php bin/console lexik:jwt:generate-keypair
 ```
 ## API Documentation
 I lack the time to add a proper API Documentation for .e.x Swagger documentation, but for the sake of testing the API I added a POSTMAN collection to the repository (I know that we are not suppose to add to GIT that kind of file).
+[Postman collection file](Subscription%20Management%20System.postman_collection.json)
 
 ## TODO
 - Swagger documentation
